@@ -10,13 +10,16 @@ export default function App() {
           <div className="hero-media">
             <img
               className="hero-logo"
-              src="/logo_transp.png"  // pon tu ruta de logo aquí
+              src="/logo_transp.png"  
               alt="Logo Tribu724"
             />
           </div>
 
           <div className="hero-copy">
             <h1 className="hero-title">Finanzas personales en 3 pasos</h1>
+            <p className="hero-caption">
+              Acceso inmediato • Garantía 7 días
+            </p>
           </div>
         </div>
       </header>
@@ -33,7 +36,17 @@ export default function App() {
       {/* BENEFICIOS */}
       <section className="benefits" id="beneficios">
         <div className="container">
-          <h2>Lo que te llevas</h2>
+          <div className="benefits-heading">
+            <div className="logo-card">
+              <img
+                className="hero-textLogo"
+                src="/textlogo.png"  
+                alt="TextLogo Tribu724"
+              />
+            </div>
+            <h2>Lo que te llevas</h2>
+          </div>
+
           <div className="grid">
             <article className="card">
               <h3>Presupuesto claro</h3>
@@ -63,14 +76,47 @@ export default function App() {
         </div>
       </section>
 
-      {/* TESTIMONIO */}
-      <section className="quote">
+      {/* TRES PASOS */}
+      <section className="steps">
         <div className="container">
-          <blockquote>
-            “Pasé de sentir que el dinero se me iba de las manos a tener un
-            plan simple que sigo cada mes.”
-          </blockquote>
-          <cite>— Estudiante del programa</cite>
+          <header className="steps-header">
+            <h2 className="steps-intro">
+              No sabes a dónde se va tu dinero, tus deudas no bajan y no tienes un plan claro 
+              para aumentar ingresos ni acumular el capital que sostenga tu vida ideal.
+            </h2>
+            <h3 className="steps-intro">
+              Aquí pasas de la <strong>confusión al control</strong> en 90 días con un método simple, práctico y probado:
+            </h3>
+          </header>
+
+          <div className="steps-grid">
+            <div className="step-card">
+              <img className="step-img" src="/paso1.png" alt="Diagnóstico" />
+              <h3>Paso 1: Diagnóstico en 1 hora</h3>
+              <p>
+                Mapearás ingresos y gastos, identificarás “fugas”, 
+                y clasificarás tus activos y pasivos entre “buenos” y “malos”.
+              </p>
+            </div>
+
+            <div className="step-card">
+              <img className="step-img" src="/paso2.png" alt="Destino" />
+              <h3>Paso 2: Destino</h3>
+              <p>
+                Calcularás tu <em>número de libertad</em>: cuánto capital necesitas 
+                para generar de forma sostenible el ingreso con el que quieres vivir.
+              </p>
+            </div>
+
+            <div className="step-card">
+              <img className="step-img" src="/paso3.png" alt="Plan de acción" />
+              <h3>Paso 3: Plan de acción</h3>
+              <p>
+                Activarás palancas para subir ingresos (+$200–$600/mes con estrategias realistas), 
+                reducir gastos sin sacrificar calidad de vida y reconfigurar deudas para pagar menos intereses.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
