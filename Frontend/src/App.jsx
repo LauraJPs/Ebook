@@ -14,12 +14,8 @@ export default function App() {
               alt="Logo Tribu724"
             />
           </div>
-
           <div className="hero-copy">
             <h1 className="hero-title">Finanzas personales en 3 pasos</h1>
-            <p className="hero-caption">
-              Acceso inmediato • Garantía 7 días
-            </p>
           </div>
         </div>
       </header>
@@ -173,6 +169,46 @@ export default function App() {
               Puedes probar el programa por 7 días y si no te gusta lo que ves, 
               te devolveremos el dinero sin problemas.
             </h2>
+          </div>
+        </div>
+      </section>
+
+      {/* PARA QUIÉN ES EL PROGRAMA */}
+      <section className="target">
+        <div className="container">
+          <img 
+            className="target-icon" 
+            src="/icono.png" 
+            alt="Icono programa" 
+          />
+          <h2>¿Será para ti este programa?</h2>
+          <div className="target-grid">
+            
+            {/* Es para ti */}
+            <div className="target-col yes">
+              <img src="/chulo.svg" alt="Chulo" />
+              <h3>Es para ti:</h3>
+              <ul>
+                <li>Si sientes que trabajas duro pero no ves resultados claros en tus finanzas.</li>
+                <li>Si tienes deudas y no sabes cómo salir de ellas de forma efectiva.</li>
+                <li>Si quieres empezar desde cero y construir un plan financiero paso a paso.</li>
+                <li>Si buscas aumentar tus ingresos, reducir gastos y tener un plan claro de inversión.</li>
+                <li>Si prefieres un método práctico con plantillas, ejemplos y hábitos fáciles de aplicar.</li>
+              </ul>
+            </div>
+
+            {/* No es para ti */}
+            <div className="target-col no">
+              <img src="/equis.svg" alt="Equis" />
+              <h3>No es para ti:</h3>
+              <ul>
+                <li>Si ya tienes tu vida financiera organizada y sin deudas.</li>
+                <li>Si ya gozas de libertad financiera y no buscas mejorar ingresos.</li>
+                <li>Si cuentas con suficientes fuentes de ingresos estables y diversificados.</li>
+                <li>Si vives de tus inversiones y no necesitas un plan adicional.</li>
+                <li>Si no estás dispuesto a comprometerte con un método simple y constante.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

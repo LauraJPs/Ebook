@@ -25,11 +25,12 @@ body{
 /* ===== HERO (bloque negro más pequeño, logo grande a un lado) ===== */
 .hero{
   color: var(--white);
-  padding: clamp(1.2rem, 5vw, 1.2rem) 0;
+  padding: clamp(1.0rem, 1vw, 1.0rem) 0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.45)),
     radial-gradient(60% 70% at 50% 0%, rgba(255,136,0,.42), rgba(255,136,0,0) 60%),
     var(--black);
+  align-items: center;
 }
 
 .hero-grid{
@@ -41,7 +42,7 @@ body{
 
 /* Logo grande */
 .hero-logo {
-  width: clamp(120px, 26vw, 200px);
+  width: clamp(150px, 20vw, 150px);
   height: auto;
   display: block;
   margin-left: 0;     
@@ -148,7 +149,7 @@ body{
   margin-top: -2rem;
 }
 .benefits .hero-textLogo {
-  margin-top: -3rem;
+  margin-top: -4rem;
   width: clamp(120px, 14vw, 220px);
   height: auto;
   margin-bottom: 1rem;
@@ -379,13 +380,215 @@ body{
   }
 }
 
+/* ===== GARANTÍA ===== */
+.cta-garantia {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  background: url("/ImagenFondos/fondo_pasos.jpg") center/cover no-repeat;
+  text-align: center;
+}
+
+.cta-garantia .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;        
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.cta-garantia .container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18), 0 0 12px rgba(255,136,0,.3);
+}
+
+/* Icono */
+.cta-garantia img {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.2));
+}
+
+/* Texto */
+.cta-textPolit h2 {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Responsive: pila vertical */
+@media (max-width: 768px) {
+  .cta-garantia .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.8rem;
+  }
+
+  .cta-textPolit h2 {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* ===== PARA QUIÉN ES EL PROGRAMA ===== */
+.target {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: url("/ImagenFondos/fondo_benef.jpg") center/cover no-repeat;
+  text-align: center;
+}
+
+.target-icon {
+  width: 200px;           
+  height: auto;
+  margin: 0 auto 1rem;    
+  display: block;
+  margin-top: -4rem;      
+  margin-bottom: -1rem;
+}
+
+.target h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* Grid */
+.target-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Columnas */
+.target-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+  position: relative;
+}
+
+/* Iconos */
+.target-col img {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.target-col h3 {
+  margin: 0 0 1rem 3rem; 
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Listas */
+.target-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.target-col li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+/* Colores */
+.target-col.yes {
+  background: #e3e3e3;
+  border-left: 6px solid #000000;
+}
+
+.target-col.no {
+  background: #e3e3e3;
+  border-left: 6px solid #000000;
+}
+
+.target-col.yes h3 { color: #000; }
+.target-col.no h3 { color: #000; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .target-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .target-col {
+    text-align: center;
+    padding: 2.2rem 1.5rem 1.8rem;
+  }
+
+  .target-col img {
+    position: static;
+    margin: 0 auto 0.6rem;
+  }
+
+  .target-col h3 {
+    margin: 0 0 1rem;
+    text-align: center;
+  }
+}
+
 
 
 /* ===== FOOTER ===== */
-.footer{ border-top: 1px solid #eee; background: #f8f8f8; padding: 1.2rem 0; }
-.footer-inner{
-  display: flex; align-items: center; gap: 1rem; justify-content: space-between; font-size: .95rem;
+.footer {
+  background: #000;         /* fondo negro */
+  color: #fff;              /* texto blanco */
+  padding: 1.5rem 0;
 }
-.footer a{ color: var(--black); text-decoration: none; font-weight: 600; }
-.footer a:hover{ text-decoration: underline; }
-@media (max-width: 640px){ .footer-inner{ flex-direction: column; } }
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;  /* texto a un lado y link al otro */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--accent, #ff8800); /* color de acento al hover */
+}
+
+/* Responsive: centrado en móviles */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+  }
+}
+
