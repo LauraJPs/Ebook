@@ -25,7 +25,6 @@ body{
 /* ===== HERO (bloque negro más pequeño, logo grande a un lado) ===== */
 .hero{
   color: var(--white);
-  /* bloque más bajo: menos padding y overlay más suave */
   padding: clamp(1.2rem, 5vw, 1.2rem) 0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.45)),
@@ -41,15 +40,23 @@ body{
 }
 
 /* Logo grande */
-.hero-logo{
+.hero-logo {
   width: clamp(120px, 26vw, 200px);
   height: auto;
   display: block;
+  margin-left: 0;     
+  margin-right: auto; 
   filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));
+}
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 1rem;                   
 }
 
 /* Contenido de texto al lado */
-.hero-copy{ text-align: left; }
+.hero-copy{ text-align: center; }
 .hero-title{
   font-size: clamp(1.8rem, 3.4vw, 3rem);
   letter-spacing: .2px;
@@ -134,11 +141,11 @@ body{
   align-items: center;  
   justify-content: center;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 .benefits h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin: 0;
+  margin-top: -2rem;
 }
 .benefits .hero-textLogo {
   margin-top: -3rem;
@@ -146,6 +153,12 @@ body{
   height: auto;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,.18));
+}
+.grid-img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
 }
 .grid{
   display: grid;
@@ -159,6 +172,7 @@ body{
   background: var(--white);
   border: 1px solid #eee;
   border-radius: var(--radius);
+  text-align: center;
   padding: 1.2rem;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease; 
@@ -178,7 +192,7 @@ body{
   }
 }
 .card:hover {
-  transform: translateY(-8px) scale(1.03); /* sube y se agranda un poco */
+  transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(0,0,0,.18), 0 0 12px rgba(255,136,0,.3);
 }
 .card h3{ margin: .2rem 0 .4rem; font-size: 1.1rem; }
@@ -194,6 +208,7 @@ body{
 .steps-header {
   max-width: 800px;
   margin: 0 auto 3rem;
+  margin-top: -4rem;
 }
 
 .steps-intro {
@@ -204,7 +219,7 @@ body{
 }
 
 .steps-intro + .steps-intro {
-  margin-top: 2.5rem; /* muy poca separación con el párrafo anterior */
+  margin-top: 2.5rem; 
 }
 
 .steps-grid {
@@ -225,7 +240,7 @@ body{
 
 .step-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.15);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18), 0 0 12px rgba(255,136,0,.3);
 }
 
 .step-img {
@@ -280,15 +295,91 @@ body{
 
 
 /* ===== CTA FINAL ===== */
-.final-cta{
-  padding: clamp(2.6rem, 7vw, 5rem) 0;
-  background:
-    radial-gradient(60% 70% at 50% 0%, rgba(255,136,0,.12), rgba(255,136,0,0) 60%),
-    #fff;
-  text-align: center;
+.final-cta {
+  padding: clamp(6rem, 10vw, 8rem) 0;
+  background: url("/ImagenFondos/fondo_pagos.jpg") center/cover no-repeat;
 }
-.final-cta h2{ font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 1rem; }
-.small-note{ margin-top: .6rem; color: var(--muted); font-size: .95rem; }
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cta-offer h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.cta-price {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 510;
+}
+
+.cta-price span {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 510;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+}
+
+.payment-methods img {
+  height: 32px;
+  object-fit: contain;
+}
+
+.cta-product img {
+  max-width: 320px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--brand, #ff8800);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.cta:hover {
+  background: #e67300;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: #555;
+  font-weight: 510;
+}
+
+@media (max-width: 900px) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .payment-methods {
+    justify-content: center;
+  }
+}
+
+
 
 /* ===== FOOTER ===== */
 .footer{ border-top: 1px solid #eee; background: #f8f8f8; padding: 1.2rem 0; }
