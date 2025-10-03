@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="lp">
       {/* HERO */}
-      <header className="hero" role="banner">
+      <header className="hero" role="banner" id="inicio">
         <div className="container hero-grid">
           <div className="hero-media">
             <img
@@ -148,14 +148,14 @@ export default function App() {
               href="https://pay.hotmart.com/V102087701L" 
               target="_blank" 
               rel="noopener noreferrer">
-              Unirme al programa
+              Quiero el Ebook ahora
             </a>
             <p className="small-note">Sin permanencias • Soporte por email</p>
           </div>
 
           {/* Imagen mockup producto */}
           <div className="cta-product">
-            <img src="/mockups/ebook.png" alt="Ebook Finanzas en 3 pasos" />
+            <img src="/Ebook.jpeg" alt="Ebook Finanzas en 3 pasos" />
           </div>
         </div>
       </section>
@@ -213,11 +213,75 @@ export default function App() {
         </div>
       </section>
 
+      {/* TESTIMONIOS */}
+      <section className="testimonials" id="testimonios" aria-labelledby="testimonials-title">
+        <div className="container">
+          <header className="testimonials-header">
+            <h2 id="testimonials-title">Esto dicen nuestros lectores</h2>
+            <p className="testimonials-sub">Resultados reales con un método simple y práctico.</p>
+          </header>
+
+          <div className="testimonials-layout">
+            {/* Izquierda: logo */}
+            <div className="testimonials-left">
+              <img className="hero-textLogo" src="/animacion.gif" alt="TextLogo Tribu724" />
+            </div>
+
+            {/* Derecha: 3 reseñas en columna */}
+            <div className="testimonials-right">
+              <article className="review-card" aria-label="Reseña de Valentina M.">
+                <div className="review-head">
+                  <img className="avatar" src="/girl.svg" alt="Foto de Valentina M." />
+                  <div>
+                    <h3 className="name">Valentina M.</h3>
+                    <div className="rating" aria-label="5 de 5 estrellas" style={{ "--rating": 5 }} />
+                  </div>
+                </div>
+                <p className="quote">
+                  “En dos semanas entendí mis gastos y dejé de sentir que el dinero se me ‘perdía’.
+                  El presupuesto del ebook es súper aplicable.”
+                </p>
+              </article>
+
+              <article className="review-card" aria-label="Reseña de Carlos R.">
+                <div className="review-head">
+                  <img className="avatar" src="/boy.svg" alt="Foto de Carlos R." />
+                  <div>
+                    <h3 className="name">Carlos R.</h3>
+                    <div className="rating" aria-label="4.5 de 5 estrellas" style={{ "--rating": 4.5 }} />
+                  </div>
+                </div>
+                <p className="quote">
+                  “Ajusté mis deudas y bajé intereses. El plan de acción me dio claridad para priorizar.”
+                </p>
+              </article>
+
+              <article className="review-card" aria-label="Reseña de Laura P.">
+                <div className="review-head">
+                  <img className="avatar" src="/girl.svg" alt="Foto de Laura P." />
+                  <div>
+                    <h3 className="name">Laura P.</h3>
+                    <div className="rating" aria-label="5 de 5 estrellas" style={{ "--rating": 5 }} />
+                  </div>
+                </div>
+                <p className="quote">
+                  “Pasé de ansiedad a tener un sistema. Ya estoy ahorrando y sé cuánto necesito para mi meta.”
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="footer" role="contentinfo">
         <div className="container footer-inner">
-          <p>© {new Date().getFullYear()} Tu Marca. Todos los derechos reservados.</p>
-          <a href="#beneficios">Beneficios</a>
+          <p>© {new Date().getFullYear()} Tribu724 - Todos los derechos reservados.</p>
+
+          <div className="footer-links">
+            <a href="#inicio">Políticas de privacidad</a>
+            <a href="#inicio">Términos y condiciones</a>
+          </div>
         </div>
       </footer>
     </div>
